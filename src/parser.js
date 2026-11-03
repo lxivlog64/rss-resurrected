@@ -1,7 +1,14 @@
 import { XMLParser } from 'fast-xml-parser';
 import { createHash } from 'node:crypto';
 
-const xml = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '@', textNodeName: '#text' });
+// Feeds often carry escaped HTML (&lt;p&gt;...) in <content>/<description>. fast-xml-parser
+// counts every standard entity toward maxTotalExpansions (default 1000), so real feeds such as
+// blog.rust-lang.org (~1400 entities) were rejected as invalid-xml. Standard entities can't
+// recurse, so allow many more; DOCTYPE entity size/depth limits stay at their safe defaults.
+const xml = new XMLParser({
+  ignoreAttributes: false, attributeNamePrefix: '@', textNodeName: '#text',
+  processEntities: { enabled: true, maxEntitySize: 10000, maxExpansionDepth: 10, maxTotalExpansions: 1_000_000, maxExpandedLength: 100000, maxEntityCount: 100 },
+});
 const arr = (v) => (v == null ? [] : Array.isArray(v) ? v : [v]);
 const text = (v) => (v == null ? '' : typeof v === 'object' ? String(v['#text'] ?? '') : String(v)).trim();
 

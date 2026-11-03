@@ -51,3 +51,14 @@ test('PBT: parseFeed of generated RSS yields unique ids and never throws', () =>
     assert.equal(f.items.length, new Set(rows.map((r) => r.g)).size);
   }));
 });
+
+test('regression: Atom feed with >1000 escaped HTML entities parses (blog.rust-lang.org shape)', async () => {
+  const { readFileSync } = await import('node:fs');
+  const xmlText = readFileSync(new URL('./fixtures/atom-escaped-html.xml', import.meta.url), 'utf8');
+  assert.ok((xmlText.match(/&[a-z]+;/g) || []).length > 1000);
+  const f = parseFeed(xmlText, 'https://blog.example.org/feed.xml');
+  assert.equal(f.error, undefined);
+  assert.equal(f.title, 'Example Blog');
+  assert.equal(f.items.length, 10);
+  assert.ok(f.items[0].summary === undefined || !/&lt;/.test(JSON.stringify(f.items[0])));
+});

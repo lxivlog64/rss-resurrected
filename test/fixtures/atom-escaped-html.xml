@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shape of https://blog.rust-lang.org/feed.xml: Atom with heavily entity-escaped HTML content (>1000 entities total). -->
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <generator uri="https://blog.example.org/" version="0.1.0">Example Blog</generator>
+    <link href="https://blog.example.org/feed.xml" rel="self" type="application/atom+xml" />
+    <link href="https://blog.example.org/" rel="alternate" type="text/html" />
+    <id>https://blog.example.org/</id>
+    <title>Example Blog</title>
+    <subtitle>Empowering everyone.</subtitle>
+    <author><name>Maintainers</name></author>
+    <updated>2026-10-11T00:00:00+00:00</updated>
+    <entry>
+        <title>Announcing Release 0</title>
+        <link rel="alternate" href="https://blog.example.org/2026/00/release.html" type="text/html" title="Announcing Release 0" />
+        <published>2026-10-01T00:00:00+00:00</published>
+        <updated>2026-10-01T00:00:00+00:00</updated>
+        <id>https://blog.example.org/2026/00/release.html</id>
+        <content type="html" xml:base="https://blog.example.org/2026/00/release.html">&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+</content>
+        <author><name>The Team</name></author>
+    </entry>
+    <entry>
+        <title>Announcing Release 1</title>
+        <link rel="alternate" href="https://blog.example.org/2026/01/release.html" type="text/html" title="Announcing Release 1" />
+        <published>2026-10-02T00:00:00+00:00</published>
+        <updated>2026-10-02T00:00:00+00:00</updated>
+        <id>https://blog.example.org/2026/01/release.html</id>
+        <content type="html" xml:base="https://blog.example.org/2026/01/release.html">&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+</content>
+        <author><name>The Team</name></author>
+    </entry>
+    <entry>
+        <title>Announcing Release 2</title>
+        <link rel="alternate" href="https://blog.example.org/2026/02/release.html" type="text/html" title="Announcing Release 2" />
+        <published>2026-10-03T00:00:00+00:00</published>
+        <updated>2026-10-03T00:00:00+00:00</updated>
+        <id>https://blog.example.org/2026/02/release.html</id>
+        <content type="html" xml:base="https://blog.example.org/2026/02/release.html">&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+</content>
+        <author><name>The Team</name></author>
+    </entry>
+    <entry>
+        <title>Announcing Release 3</title>
+        <link rel="alternate" href="https://blog.example.org/2026/03/release.html" type="text/html" title="Announcing Release 3" />
+        <published>2026-10-04T00:00:00+00:00</published>
+        <updated>2026-10-04T00:00:00+00:00</updated>
+        <id>https://blog.example.org/2026/03/release.html</id>
+        <content type="html" xml:base="https://blog.example.org/2026/03/release.html">&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+</content>
+        <author><name>The Team</name></author>
+    </entry>
+    <entry>
+        <title>Announcing Release 4</title>
+        <link rel="alternate" href="https://blog.example.org/2026/04/release.html" type="text/html" title="Announcing Release 4" />
+        <published>2026-10-05T00:00:00+00:00</published>
+        <updated>2026-10-05T00:00:00+00:00</updated>
+        <id>https://blog.example.org/2026/04/release.html</id>
+        <content type="html" xml:base="https://blog.example.org/2026/04/release.html">&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+</content>
+        <author><name>The Team</name></author>
+    </entry>
+    <entry>
+        <title>Announcing Release 5</title>
+        <link rel="alternate" href="https://blog.example.org/2026/05/release.html" type="text/html" title="Announcing Release 5" />
+        <published>2026-10-06T00:00:00+00:00</published>
+        <updated>2026-10-06T00:00:00+00:00</updated>
+        <id>https://blog.example.org/2026/05/release.html</id>
+        <content type="html" xml:base="https://blog.example.org/2026/05/release.html">&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+</content>
+        <author><name>The Team</name></author>
+    </entry>
+    <entry>
+        <title>Announcing Release 6</title>
+        <link rel="alternate" href="https://blog.example.org/2026/06/release.html" type="text/html" title="Announcing Release 6" />
+        <published>2026-10-07T00:00:00+00:00</published>
+        <updated>2026-10-07T00:00:00+00:00</updated>
+        <id>https://blog.example.org/2026/06/release.html</id>
+        <content type="html" xml:base="https://blog.example.org/2026/06/release.html">&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+</content>
+        <author><name>The Team</name></author>
+    </entry>
+    <entry>
+        <title>Announcing Release 7</title>
+        <link rel="alternate" href="https://blog.example.org/2026/07/release.html" type="text/html" title="Announcing Release 7" />
+        <published>2026-10-08T00:00:00+00:00</published>
+        <updated>2026-10-08T00:00:00+00:00</updated>
+        <id>https://blog.example.org/2026/07/release.html</id>
+        <content type="html" xml:base="https://blog.example.org/2026/07/release.html">&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+</content>
+        <author><name>The Team</name></author>
+    </entry>
+    <entry>
+        <title>Announcing Release 8</title>
+        <link rel="alternate" href="https://blog.example.org/2026/08/release.html" type="text/html" title="Announcing Release 8" />
+        <published>2026-10-09T00:00:00+00:00</published>
+        <updated>2026-10-09T00:00:00+00:00</updated>
+        <id>https://blog.example.org/2026/08/release.html</id>
+        <content type="html" xml:base="https://blog.example.org/2026/08/release.html">&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+</content>
+        <author><name>The Team</name></author>
+    </entry>
+    <entry>
+        <title>Announcing Release 9</title>
+        <link rel="alternate" href="https://blog.example.org/2026/09/release.html" type="text/html" title="Announcing Release 9" />
+        <published>2026-10-10T00:00:00+00:00</published>
+        <updated>2026-10-10T00:00:00+00:00</updated>
+        <id>https://blog.example.org/2026/09/release.html</id>
+        <content type="html" xml:base="https://blog.example.org/2026/09/release.html">&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rust &lt;code&gt;1.0&lt;/code&gt; &amp;amp; friends &lt;a href=&quot;https://example.com/x&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+</content>
+        <author><name>The Team</name></author>
+    </entry>
+</feed>
