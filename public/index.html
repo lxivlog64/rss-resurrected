@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Haunted Feeds — RSS Resurrected</title>
+<style>
+:root{--bg:#0d0a12;--card:#1a1424;--ink:#e9e3f5;--dim:#9b8fb3;--pump:#ff7a1a;--slime:#7dff6b}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:radial-gradient(ellipse at top,#2a1640,var(--bg) 60%);color:var(--ink);min-height:100vh}
+header{text-align:center;padding:2rem 1rem 1rem}h1{font-family:Georgia,serif;font-size:2.6rem;margin:0;color:var(--pump);text-shadow:0 0 18px #ff7a1a88;letter-spacing:.04em}
+.sub{color:var(--dim)}.fog{position:fixed;inset:auto 0 0 0;height:120px;background:linear-gradient(transparent,#c9b8ff14);pointer-events:none}
+main{max-width:920px;margin:auto;padding:1rem}.bar{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+input,button,select{font:inherit;border-radius:10px;border:1px solid #3b2d52;background:#140f1c;color:var(--ink);padding:.55rem .8rem}
+input{flex:1;min-width:220px}button{cursor:pointer;background:#2b1d3f}button:hover{border-color:var(--pump);box-shadow:0 0 10px #ff7a1a55}
+.primary{background:var(--pump);color:#1a0d00;font-weight:700}
+.group h2{font-family:Georgia,serif;color:var(--slime);border-bottom:1px dashed #3b2d52;padding-bottom:.3rem}
+.item{background:var(--card);border:1px solid #2d2240;border-radius:14px;padding:1rem;margin:.7rem 0;transition:transform .2s}.item:hover{transform:translateY(-2px) rotate(-.2deg)}
+.item a{color:var(--ink);font-weight:600;text-decoration:none}.item a:hover{color:var(--pump)}.meta{color:var(--dim);font-size:.85rem}
+.tag{font-size:.7rem;padding:.1rem .45rem;border-radius:6px;background:#30224a;margin-left:.4rem}
+#feeds li{color:var(--dim)}#feeds .err{color:#ff6b8b}.empty{text-align:center;color:var(--dim);padding:3rem}
+</style></head><body>
+<header><h1>🎃 Haunted Feeds</h1><div class="sub">RSS isn't dead. It was just sleeping. Your sites, resurrected into one daily digest.</div></header>
+<main>
+<div class="bar"><input id="url" placeholder="https://example.com/feed.xml" aria-label="Feed URL"><button class="primary" id="add">Summon feed</button>
+<button id="poll">🔮 Poll now</button><button id="demo">👻 Load demo</button></div>
+<div class="bar"><label>OPML <input type="file" id="opml" accept=".opml,.xml"></label><a href="/api/opml"><button>⬇ Export OPML</button></a>
+<select id="hours"><option value="24">Last 24h</option><option value="72">Last 3 days</option><option value="168">Last week</option></select></div>
+<details><summary class="meta">Followed graves (<span id="fc">0</span>)</summary><ul id="feeds"></ul></details>
+<div id="digest"></div>
+</main><div class="fog"></div>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+async function api(p,o){const r=await fetch(p,o);const j=await r.json();if(!r.ok)alert(j.error);return j}
+async function render(){
+ const feeds=await api('/api/feeds');$('#fc').textContent=feeds.length;
+ $('#feeds').innerHTML=feeds.map(f=>`<li>${esc(f.title)} ${f.error?`<span class=err>⚠ ${esc(f.error)}</span>`:''} <button data-u="${esc(f.url)}">✖</button></li>`).join('');
+ const d=await api('/api/digest?hours='+$('#hours').value);
+ $('#digest').innerHTML=d.count?Object.entries(d.groups).map(([t,items])=>`<section class=group><h2>🕯 ${esc(t)}</h2>${items.map(i=>`<article class=item><a href="${esc(i.link)}" target=_blank rel=noopener>${esc(i.title)}</a><span class=tag>${i.method==='llm'?'🧠 AI':'🦇 extractive'}</span><p>${esc(i.summary)}</p><div class=meta>${new Date(i.published||i.fetchedAt).toLocaleString()}</div></article>`).join('')}</section>`).join(''):'<div class=empty>The crypt is quiet… add a feed or load the demo. 🕸</div>';
+}
+$('#add').onclick=async()=>{await api('/api/feeds',{method:'POST',body:JSON.stringify({url:$('#url').value.trim()})});$('#url').value='';render()};
+$('#poll').onclick=async()=>{await api('/api/poll',{method:'POST'});render()};
+$('#demo').onclick=async()=>{await api('/api/demo',{method:'POST'});render()};
+$('#hours').onchange=render;
+$('#opml').onchange=async e=>{const t=await e.target.files[0].text();const r=await api('/api/opml',{method:'POST',body:t});alert(`Imported ${r.imported} of ${r.found} feeds`);await api('/api/poll',{method:'POST'});render()};
+$('#feeds').onclick=async e=>{if(e.target.dataset.u){await api('/api/feeds?url='+encodeURIComponent(e.target.dataset.u),{method:'DELETE'});render()}};
+render();
+</script></body></html>

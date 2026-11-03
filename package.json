@@ -1,0 +1,23 @@
+{
+  "name": "rss-resurrected",
+  "version": "1.0.0",
+  "description": "Haunted Feeds: an AI-powered RSS/Atom reader that resurrects your feeds into a spooky daily digest. Built with Kiro for Kiroween 2026.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "author": "Guowei Lu",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "fast-xml-parser": "^4.5.7"
+  },
+  "devDependencies": {
+    "fast-check": "^4.10.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
