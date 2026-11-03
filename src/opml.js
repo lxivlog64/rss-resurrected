@@ -12,7 +12,7 @@ export function parseOpml(text) {
     for (const o of [].concat(node ?? [])) {
       if (!o || typeof o !== 'object') continue;
       const url = o.xmlUrl || o.xmlurl;
-      if (url && /^https?:\/\//i.test(url) && !seen.has(url)) { seen.add(url); out.push({ url, title: o.title || o.text || url }); }
+      if (url && /^(https?|demo):\/\//i.test(url) && !seen.has(url)) { seen.add(url); out.push({ url, title: o.title || o.text || url }); }
       walk(o.outline);
     }
   };

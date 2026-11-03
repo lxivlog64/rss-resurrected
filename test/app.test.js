@@ -34,3 +34,9 @@ test('API: demo -> digest works offline with no API key', async () => {
     assert.equal((await fetch(base)).status, 200);
   } finally { app.close(); }
 });
+
+test('OPML import accepts built-in demo:// feeds', async () => {
+  const { parseOpml } = await import('../src/opml.js');
+  const r = parseOpml('<opml version="2.0"><body><outline xmlUrl="demo://crypt-chronicle"/><outline xmlUrl="ftp://x"/></body></opml>');
+  assert.deepEqual(r.map((f) => f.url), ['demo://crypt-chronicle']);
+});
