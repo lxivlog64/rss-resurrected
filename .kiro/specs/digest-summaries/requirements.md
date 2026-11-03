@@ -8,3 +8,4 @@ As a busy reader, I want one page summarizing what my sites published recently s
 4. IF the LLM request fails or exceeds 20 s, THEN THE SYSTEM SHALL fall back to the extractive summary.
 5. WHEN the user opens the digest, THE SYSTEM SHALL show items from the selected window (24 h / 3 d / 7 d), grouped by feed, newest first.
 6. WHEN the user chooses "Load demo", THE SYSTEM SHALL populate the digest from bundled offline feeds without network access.
+7. WHEN the user requests `GET /api/digest.md`, THE SYSTEM SHALL return a Markdown document with content-type `text/markdown`, built using the same digest logic as the digest view via the `hours` query parameter (24 h / 3 d / 7 d, default 24 h), grouped by feed with items newest first, where each item shows its title as a link, date, summary method badge, and summary text.

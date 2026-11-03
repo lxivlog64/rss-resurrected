@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Store } from './store.js';
-import { pollAll, pollFeed, buildDigest } from './poller.js';
+import { pollAll, pollFeed, buildDigest, digestToMarkdown } from './poller.js';
 import { parseOpml, toOpml } from './opml.js';
 import { DEMO_FEEDS, demoFetch } from './demo.js';
 
@@ -35,7 +35,9 @@ export function createApp({ store, fetchImpl = demoFetch, env = process.env } = 
       if (req.method === 'GET' && u.pathname === '/api/opml') { res.writeHead(200, { 'content-type': 'text/x-opml', 'content-disposition': 'attachment; filename="haunted-feeds.opml"' }); return res.end(toOpml(store.feeds)); }
       if (req.method === 'POST' && u.pathname === '/api/poll') return json(res, 200, { added: await pollAll(store, opts) });
       if (req.method === 'POST' && u.pathname === '/api/demo') { for (const url of Object.keys(DEMO_FEEDS)) store.addFeed(url); return json(res, 200, { added: await pollAll(store, opts) }); }
-      if (req.method === 'GET' && u.pathname === '/api/digest') return json(res, 200, buildDigest(store, { hours: Math.min(168, Number(u.searchParams.get('hours')) || 24) }));
+      const digestHours = () => Math.min(168, Number(u.searchParams.get('hours')) || 24);
+      if (req.method === 'GET' && u.pathname === '/api/digest.md') { res.writeHead(200, { 'content-type': 'text/markdown; charset=utf-8' }); return res.end(digestToMarkdown(buildDigest(store, { hours: digestHours() }))); }
+      if (req.method === 'GET' && u.pathname === '/api/digest') return json(res, 200, buildDigest(store, { hours: digestHours() }));
       json(res, 404, { error: 'not found' });
     } catch (e) { json(res, 400, { error: String(e.message || e) }); }
   });

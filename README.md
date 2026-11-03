@@ -1,6 +1,6 @@
 # 🎃 Haunted Feeds — RSS Resurrected
 
-RSS isn't dead, it was just sleeping. Haunted Feeds is a small, self-hosted RSS/Atom reader that turns the sites you follow into one daily digest with short summaries, wrapped in a Halloween UI. Organized for [Kiro](https://kiro.dev) (see `.kiro/`) for **Kiroween 2026** (category: Resurrection).
+RSS isn't dead, it was just sleeping. Haunted Feeds is a small, self-hosted RSS/Atom reader that turns the sites you follow into one daily digest with short summaries, wrapped in a Halloween UI. Made for **Kiroween 2026** (category: Resurrection); see `.kiro/` and the Kiro section below.
 
 **Live demo:** https://rss-resurrected.onrender.com (free tier, first load may take ~50 s)  
 **Video:** https://youtu.be/chdW0IqvuTw
@@ -34,7 +34,9 @@ docker build -t haunted-feeds . && docker run -p 3000:3000 -v hf:/data haunted-f
 `GET/POST/DELETE /api/feeds`, `POST /api/poll`, `POST /api/demo`, `GET /api/digest?hours=24`, `POST|GET /api/opml`, `GET /api/health`.
 
 ## Kiro
-See [`/.kiro`](.kiro) (steering, specs, hooks, MCP) and [docs/KIRO_USAGE.md](docs/KIRO_USAGE.md).
+[`/.kiro`](.kiro) holds steering (product, tech, structure), three specs with EARS requirements/design/tasks, two `PostFileSave` hooks and a workspace MCP config (`fetch`).
+
+In Kiro IDE 1.4.86 (Free plan), Spec mode added requirement 7 and task 6 to the `digest-summaries` spec and implemented `GET /api/digest.md` (`digestToMarkdown`, route, test). It ran `npm test` (12/12) and fixed one broken edit of its own on the way, for about 4.4 credits. Both hooks show as enabled in the Agent Hooks panel, but I didn't see the test hook fire on a manual save. The fetch MCP server connected and Kiro called it, but my sandbox's DNS (198.18.0.1) made it refuse the request. Details and screenshots: [docs/KIRO_USAGE.md](docs/KIRO_USAGE.md).
 
 ## License
 MIT

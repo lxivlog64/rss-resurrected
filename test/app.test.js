@@ -40,3 +40,28 @@ test('OPML import accepts built-in demo:// feeds', async () => {
   const r = parseOpml('<opml version="2.0"><body><outline xmlUrl="demo://crypt-chronicle"/><outline xmlUrl="ftp://x"/></body></opml>');
   assert.deepEqual(r.map((f) => f.url), ['demo://crypt-chronicle']);
 });
+
+test('API: GET /api/digest.md returns Markdown export', async () => {
+  const app = createApp({ store: new Store(null), env: {} }).listen(0);
+  const base = `http://localhost:${app.address().port}`;
+  try {
+    await (await fetch(`${base}/api/demo`, { method: 'POST' })).json();
+    const res = await fetch(`${base}/api/digest.md?hours=24`);
+    assert.equal(res.status, 200);
+    assert.match(res.headers.get('content-type'), /text\/markdown/);
+    const md = await res.text();
+    assert.match(md, /^# Haunted Feeds Digest/m);
+    assert.match(md, /item/);  // item count line
+    assert.match(md, /## /);   // feed group headings
+    assert.match(md, /### /);  // item headings
+    assert.match(md, /🦇 extractive/);  // method badge
+    // Every item in the JSON digest should appear in the markdown
+    const d = await (await fetch(`${base}/api/digest?hours=24`)).json();
+    for (const items of Object.values(d.groups)) {
+      for (const it of items) {
+        assert.ok(md.includes(it.summary), `summary for "${it.title}" must be in markdown`);
+        assert.ok(md.includes(it.title), `title "${it.title}" must be in markdown`);
+      }
+    }
+  } finally { app.close(); }
+});

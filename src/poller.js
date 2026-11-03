@@ -40,3 +40,30 @@ export function buildDigest(store, { hours = 24, now = Date.now() } = {}) {
   for (const i of items) (groups[i.feedTitle] ??= []).push(i);
   return { generatedAt: new Date(now).toISOString(), hours, count: items.length, groups };
 }
+
+/** Render a digest object as a Markdown document, grouped by feed, newest first. */
+export function digestToMarkdown(digest) {
+  const date = new Date(digest.generatedAt).toISOString().slice(0, 10);
+  let md = `# Haunted Feeds Digest
+
+_Generated ${date} — ${digest.count} item${digest.count === 1 ? '' : 's'} from the last ${digest.hours}h_
+`;
+  for (const [feed, items] of Object.entries(digest.groups)) {
+    md += `
+## ${feed}
+`;
+    for (const it of items) {
+      const badge = it.method === 'llm' ? '🧠 AI' : '🦇 extractive';
+      const date2 = (it.published || it.fetchedAt || '').slice(0, 10);
+      const link = it.link ? `[${it.title}](${it.link})` : it.title;
+      md += `
+### ${link}
+
+${date2} · ${badge}
+
+${it.summary || ''}
+`;
+    }
+  }
+  return md;
+}

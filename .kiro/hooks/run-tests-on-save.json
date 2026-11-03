@@ -6,8 +6,12 @@
       "description": "Runs the node:test suite (incl. fast-check properties) when a file under src/ is saved.",
       "trigger": "PostFileSave",
       "matcher": "(^|/)src/.*\\.js$",
-      "action": { "type": "command", "command": "npm test" },
-      "timeout": 120
+      "action": {
+        "type": "command",
+        "command": "npm test"
+      },
+      "timeout": 120,
+      "enabled": true
     }
   ]
 }
