@@ -22,8 +22,8 @@ Zero-config demo, LLM summaries that fall back cleanly, round-trip OPML, 9 passi
 Email or web-push digests, per-feed mute rules, full-text extraction.
 
 ## Links
-- Repo: https://github.com/lxivlog64/rss-resurrected  <!-- TODO after push -->
-- App: <APP_URL>  <!-- TODO after deploy -->
+- Repo: https://github.com/lxivlog64/rss-resurrected
+- App: https://rss-resurrected.onrender.com
 - Video: <YOUTUBE_URL>  <!-- TODO -->
 - Blog: <DEVTO_URL>  <!-- TODO -->
 - Social: <X_POST_URL>  <!-- TODO -->

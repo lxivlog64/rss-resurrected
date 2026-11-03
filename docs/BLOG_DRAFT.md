@@ -26,4 +26,6 @@ The design lists correctness properties, such as "URL normalization is idempoten
 git clone https://github.com/lxivlog64/rss-resurrected
 cd rss-resurrected && npm install && npm start
 ```
+Try it live: https://rss-resurrected.onrender.com
+
 Click **👻 Load demo**. MIT licensed. Happy Kiroween 🎃
