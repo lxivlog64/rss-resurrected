@@ -8,7 +8,7 @@ This post was written as part of the Kiroween 2026 hackathon.
 RSS never died. Podcasts still run on it, and most blogs still publish a feed. What went away was the habit of reading feeds. For Kiroween's **Resurrection** category I built **Haunted Feeds**, a small self-hosted reader that turns the sites you follow into one daily digest with short summaries, in a Halloween costume.
 
 - 🎃 Live demo: https://rss-resurrected.onrender.com (free tier, the first load can take ~50 s)
-- 🎥 Video (under 3 min): https://youtu.be/chdW0IqvuTw
+- 🎥 Video (under 3 min): https://youtu.be/kT7sllgMBfc
 - 💾 Code (MIT): https://github.com/lxivlog64/rss-resurrected
 
 ## What it does

@@ -53,4 +53,4 @@ From `.kiro/specs/feed-ingestion/design.md`, implemented in `test/parser.test.js
 ## Regression found after deploy
 Valid Atom feeds with lots of escaped HTML (e.g. blog.rust-lang.org) were rejected as `invalid-xml` because fast-xml-parser's default `maxTotalExpansions` (1000) counts standard entities. The fix (commit df40def) raises that cap while keeping DOCTYPE entity limits strict. `test/fixtures/atom-escaped-html.xml` covers it.
 
-Links: [repo](https://github.com/lxivlog64/rss-resurrected) · [live demo](https://rss-resurrected.onrender.com) · [video](https://youtu.be/chdW0IqvuTw)
+Links: [repo](https://github.com/lxivlog64/rss-resurrected) · [live demo](https://rss-resurrected.onrender.com) · [video](https://youtu.be/kT7sllgMBfc)
