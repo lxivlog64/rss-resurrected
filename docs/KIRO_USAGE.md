@@ -1,22 +1,27 @@
-# How Kiro was used — DRAFT
+# How this project uses Kiro
 
-> ⚠️ Draft. Section A lists what is **actually configured in this repo** (verifiable). Section B has `TODO(confirm)` markers for anything that must be confirmed after really running the project in Kiro. Do not submit B as-is: delete every claim you cannot back up.
+Everything Kiro reads lives in `.kiro/`, in the formats from the [Kiro docs](https://kiro.dev/docs/). This page lists what each file is and how a Kiro user works with it. It describes repository files only; it makes no claim about which code Kiro generated.
 
-## A. Configured in the repository (verifiable)
-| Kiro feature | Where | What it does |
-|---|---|---|
-| Steering | `.kiro/steering/product.md` (always), `tech.md` (always), `structure.md` (fileMatch `src/**`, `test/**`) | Product goals, stack rules (no build step, never throw in parsers, no secrets), and module map |
-| Specs | `.kiro/specs/feed-ingestion`, `digest-summaries`, `opml-import` | `requirements.md` in EARS syntax, `design.md` with correctness properties, `tasks.md` checklists |
-| Hooks | `.kiro/hooks/run-tests-on-save.json` (PostFileSave on `src/**/*.js` → `npm test`), `check-syntax-on-save.json` | Keep tests green on save |
-| MCP | `.kiro/settings/mcp.json` | `fetch` MCP server (via `uvx mcp-server-fetch`) for pulling real feeds while developing |
-| Property-based testing | `test/parser.test.js` (fast-check) | Properties P1–P3 from the feed-ingestion design. P2 found a real bug: `http://a.aa//` normalized non-idempotently; fixed by collapsing trailing slashes |
+| Kiro feature | Files | Format (per Kiro docs) | What it holds |
+|---|---|---|---|
+| [Steering](https://kiro.dev/docs/steering/) | `.kiro/steering/product.md`, `tech.md`, `structure.md` | Markdown with YAML front matter: `inclusion: always` (product, tech) and `inclusion: fileMatch` + `fileMatchPattern: ["src/**/*.js","test/**/*.js"]` (structure) | Product goal and tone, stack rules (Node 20, no build step, parsers never throw, no secrets), module map |
+| [Specs](https://kiro.dev/docs/specs/) | `.kiro/specs/{feed-ingestion,digest-summaries,opml-import}/` | `requirements.md` (user story + EARS acceptance criteria), `design.md`, `tasks.md` (checkbox task list) | One spec per feature; the design lists correctness properties |
+| [Hooks](https://kiro.dev/docs/hooks/) | `.kiro/hooks/run-tests-on-save.json`, `check-syntax-on-save.json` | `{"version":"v1","hooks":[{name, trigger, matcher, action}]}`, trigger `PostFileSave`, matcher is a regex on the file path, action `type: command` | `npm test` when `src/*.js` is saved; `node --check` on source modules when any `.js` is saved |
+| [MCP](https://kiro.dev/docs/mcp/configuration/) | `.kiro/settings/mcp.json` | Workspace-level `mcpServers` object | `fetch` server via `uvx mcp-server-fetch` |
 
-## B. To confirm after running in Kiro
-- TODO(confirm): Which Kiro product(s) were used (Kiro IDE / Kiro CLI) and how they differed in practice.
-- TODO(confirm): Did Kiro load the steering files automatically (check the context panel)? Quote one place where steering changed the output.
-- TODO(confirm): Spec-driven vs vibe coding — which parts were generated from specs (Kiro "Run task") and which were vibe-coded in chat. Add one concrete comparison.
-- TODO(confirm): Did the PostFileSave hook fire in Kiro and show test output? Screenshot.
-- TODO(confirm): Was the fetch MCP server started successfully and used? Example prompt.
-- TODO(confirm): Custom agents — none configured yet. Add one only if actually created.
-- TODO(confirm): Powers — none used yet. Mention only if actually used.
-- TODO(confirm): Kiro's built-in PBT support — only claim if Kiro itself generated/ran property tests.
+## How a Kiro user uses these
+- **Steering:** open the repo in Kiro. Files marked `always` load into every interaction; `structure.md` loads when you work on files matching its pattern. They show up in the Steering section of the Kiro panel.
+- **Specs:** they appear under Specs in the Kiro panel. `tasks.md` is what Kiro's task execution interface tracks; requirements and design can be reviewed and edited before running tasks.
+- **Hooks:** `.kiro/hooks/*.json` activate automatically when a session starts; the `PostFileSave` hooks run when a matching file is saved. Set `"enabled": false` to switch one off.
+- **MCP:** Kiro merges `.kiro/settings/mcp.json` with the user-level config. The fetch server needs `uv` (`uvx`) installed.
+
+## Correctness properties (fast-check)
+From `.kiro/specs/feed-ingestion/design.md`, implemented in `test/parser.test.js` and run by `npm test`:
+- P1 `dedupe` is idempotent, yields unique ids and preserves order.
+- P2 `normalizeUrl` is idempotent and ignores `utm_source` and fragments.
+- P3 a generated RSS feed with k distinct guids yields exactly k items, and the parser never throws.
+
+## Regression found after deploy
+Valid Atom feeds with lots of escaped HTML (e.g. blog.rust-lang.org) were rejected as `invalid-xml` because fast-xml-parser's default `maxTotalExpansions` (1000) counts standard entities. The fix (commit df40def) raises that cap while keeping DOCTYPE entity limits strict. `test/fixtures/atom-escaped-html.xml` covers it.
+
+Links: [repo](https://github.com/lxivlog64/rss-resurrected) · [live demo](https://rss-resurrected.onrender.com) · [video](https://youtu.be/chdW0IqvuTw)

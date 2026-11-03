@@ -1,1 +1,13 @@
-{"version":"v1","hooks":[{"name":"Run tests on source save","trigger":"PostFileSave","matcher":"src/**/*.js","action":{"type":"command","command":"npm test"}}]}
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Run tests on source save",
+      "description": "Runs the node:test suite (incl. fast-check properties) when a file under src/ is saved.",
+      "trigger": "PostFileSave",
+      "matcher": "(^|/)src/.*\\.js$",
+      "action": { "type": "command", "command": "npm test" },
+      "timeout": 120
+    }
+  ]
+}

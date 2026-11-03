@@ -15,7 +15,7 @@
 **2:00–2:40 — Kiro highlights**
 - Open `.kiro/specs/feed-ingestion/requirements.md` (EARS) → design properties → tasks checked off.
 - Show steering files; save `src/parser.js` → hook runs `npm test`.
-- Show the property test failing on `http://a.aa//` and the fix. (Only show what really happened — see KIRO_USAGE TODOs.)
+- Show `npm test` passing, including the fast-check property tests.
 
 **2:40–2:50 — Wrap**
 "Haunted Feeds: an old open standard, resurrected with AI. Code is MIT on GitHub. Happy Kiroween." 🎃
