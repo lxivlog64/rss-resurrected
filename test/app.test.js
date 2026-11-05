@@ -65,3 +65,26 @@ test('API: GET /api/digest.md returns Markdown export', async () => {
     }
   } finally { app.close(); }
 });
+
+test('seedDemoIfEmpty fills an empty store once; AUTO_DEMO=0 disables', async () => {
+  const { seedDemoIfEmpty } = await import('../src/server.js');
+  const { buildDigest } = await import('../src/poller.js');
+
+  const empty = new Store(null);
+  const r1 = await seedDemoIfEmpty(empty, { env: {} });
+  assert.equal(r1.seeded, true);
+  assert.equal(empty.feeds.length, 2);
+  assert.equal(r1.added, 4);
+  assert.equal(buildDigest(empty, { hours: 24 }).count, 3);
+
+  const r2 = await seedDemoIfEmpty(empty, { env: {} });
+  assert.equal(r2.seeded, false);
+  assert.equal(r2.reason, 'already-has-feeds');
+  assert.equal(empty.feeds.length, 2);
+
+  const disabled = new Store(null);
+  const r3 = await seedDemoIfEmpty(disabled, { env: { AUTO_DEMO: '0' } });
+  assert.equal(r3.seeded, false);
+  assert.equal(r3.reason, 'disabled');
+  assert.equal(disabled.feeds.length, 0);
+});

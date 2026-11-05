@@ -15,7 +15,7 @@ RSS isn't dead, it was just sleeping. Haunted Feeds is a small, self-hosted RSS/
 
 ## Run
 ```bash
-npm install && npm start        # http://localhost:3000, then click "👻 Load demo"
+npm install && npm start        # http://localhost:3000 (empty store auto-seeds demo; or click "👻 Load demo")
 npm test                        # unit + property-based tests (fast-check)
 docker build -t haunted-feeds . && docker run -p 3000:3000 -v hf:/data haunted-feeds
 ```
@@ -29,6 +29,7 @@ docker build -t haunted-feeds . && docker run -p 3000:3000 -v hf:/data haunted-f
 | `OPENAI_API_KEY` | unset | Enables LLM summaries |
 | `OPENAI_BASE_URL` | `https://api.openai.com/v1` | Any OpenAI-compatible endpoint |
 | `LLM_MODEL` | `gpt-4o-mini` | Model name |
+| `AUTO_DEMO` | `1` | On empty store, auto-load bundled demo feeds at startup; set `0` to disable |
 
 ## API
 `GET/POST/DELETE /api/feeds`, `POST /api/poll`, `POST /api/demo`, `GET /api/digest?hours=24`, `POST|GET /api/opml`, `GET /api/health`.

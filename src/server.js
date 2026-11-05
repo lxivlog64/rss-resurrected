@@ -43,9 +43,22 @@ export function createApp({ store, fetchImpl = demoFetch, env = process.env } = 
   });
 }
 
+/** If the store has no feeds, load the bundled demo feeds and poll them.
+ *  Set AUTO_DEMO=0 to disable (useful for production with a real OPML). */
+export async function seedDemoIfEmpty(store, { fetchImpl = demoFetch, env = process.env } = {}) {
+  if (String(env.AUTO_DEMO ?? '1') === '0') return { seeded: false, reason: 'disabled' };
+  if (store.feeds.length > 0) return { seeded: false, reason: 'already-has-feeds' };
+  for (const url of Object.keys(DEMO_FEEDS)) store.addFeed(url);
+  const added = await pollAll(store, { fetchImpl, env });
+  return { seeded: true, feeds: store.feeds.length, added };
+}
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const store = new Store(process.env.DATA_FILE || join(root, 'data/store.json'));
   const port = Number(process.env.PORT) || 3000;
+  seedDemoIfEmpty(store).then((r) => {
+    if (r.seeded) console.log(`🎃 Auto-seeded ${r.feeds} demo feeds (${r.added} items)`);
+  }).catch((e) => console.warn('auto-demo seed failed:', e.message || e));
   createApp({ store }).listen(port, () => console.log(`🎃 Haunted Feeds rising on http://localhost:${port} (LLM: ${process.env.OPENAI_API_KEY ? 'on' : 'off, extractive mode'})`));
   const mins = Number(process.env.POLL_MINUTES) || 30;
   setInterval(() => pollAll(store, { fetchImpl: demoFetch }).catch(() => {}), mins * 60e3).unref();
