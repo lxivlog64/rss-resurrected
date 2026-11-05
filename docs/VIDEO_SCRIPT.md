@@ -3,7 +3,7 @@
 **0:00–0:15 — Problem**
 (Screen: endless social timeline scrolling.) "Algorithms decide what we read. RSS — the open web's subscription button — was declared dead years ago. Tonight, we dig it up."
 
-**0:15–1:20 — Demo part 1** (live on https://rss-resurrected.onrender.com)
+**0:15–1:20 — Demo part 1** (live on https://rss-resurrected-lxivlog64.onrender.com)
 - Empty crypt state → click **👻 Load demo** → digest appears grouped by site, each card with a 🦇 extractive summary. "No API key, no account — works offline."
 - Paste a real feed URL → **Summon feed** → new items with summaries.
 - Import an OPML exported from another reader → "Imported N of N feeds".

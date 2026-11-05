@@ -35,7 +35,7 @@ Email or web-push digests, per-feed mute rules, full-text extraction.
 
 ## Links
 - Repo: https://github.com/lxivlog64/rss-resurrected
-- App: https://rss-resurrected.onrender.com
+- App: https://rss-resurrected-lxivlog64.onrender.com
 - Video: https://youtu.be/kT7sllgMBfc
 - Blog: <DEVTO_URL>  <!-- TODO -->
 - Social: <X_POST_URL>  <!-- TODO -->

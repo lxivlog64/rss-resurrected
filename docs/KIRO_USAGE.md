@@ -110,4 +110,4 @@ Valid Atom feeds with lots of escaped HTML (e.g. blog.rust-lang.org) were reject
 - **Hooks:** `.kiro/hooks/*.json` activate when a session starts; set `"enabled": false` to switch one off.
 - **MCP:** Kiro merges `.kiro/settings/mcp.json` with the user-level config. The fetch server needs `uv` (`uvx`) installed.
 
-Links: [repo](https://github.com/lxivlog64/rss-resurrected) · [live demo](https://rss-resurrected.onrender.com) · [video](https://youtu.be/kT7sllgMBfc)
+Links: [repo](https://github.com/lxivlog64/rss-resurrected) · [live demo](https://rss-resurrected-lxivlog64.onrender.com) · [video](https://youtu.be/kT7sllgMBfc)

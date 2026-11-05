@@ -7,7 +7,7 @@ This post was written as part of the Kiroween 2026 hackathon.
 
 RSS never died. Podcasts still run on it, and most blogs still publish a feed. What went away was the habit of reading feeds. For Kiroween's **Resurrection** category I built **Haunted Feeds**, a small self-hosted reader that turns the sites you follow into one daily digest with short summaries, in a Halloween costume.
 
-- 🎃 Live demo: https://rss-resurrected.onrender.com (free tier, the first load can take ~50 s)
+- 🎃 Live demo: https://rss-resurrected-lxivlog64.onrender.com (free tier, the first load can take ~50 s)
 - 🎥 Video (under 3 min): https://youtu.be/kT7sllgMBfc
 - 💾 Code (MIT): https://github.com/lxivlog64/rss-resurrected
 
@@ -43,4 +43,4 @@ git clone https://github.com/lxivlog64/rss-resurrected
 cd rss-resurrected && npm install && npm start   # http://localhost:3000
 npm test                                          # 10 tests incl. 3 property tests
 ```
-Or open https://rss-resurrected.onrender.com and click **👻 Load demo**. Happy Kiroween 🎃
+Or open https://rss-resurrected-lxivlog64.onrender.com and click **👻 Load demo**. Happy Kiroween 🎃

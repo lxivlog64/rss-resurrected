@@ -2,7 +2,7 @@
 
 RSS isn't dead, it was just sleeping. Haunted Feeds is a small, self-hosted RSS/Atom reader that turns the sites you follow into one daily digest with short summaries, wrapped in a Halloween UI. Made for **Kiroween 2026** (category: Resurrection); see `.kiro/` and the Kiro section below.
 
-**Live demo:** https://rss-resurrected.onrender.com (free tier, first load may take ~50 s)  
+**Live demo:** https://rss-resurrected-lxivlog64.onrender.com (free tier, first load may take ~50 s)  
 **Video:** https://youtu.be/kT7sllgMBfc
 
 ## Features
