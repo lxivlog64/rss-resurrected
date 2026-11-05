@@ -34,10 +34,21 @@ docker build -t haunted-feeds . && docker run -p 3000:3000 -v hf:/data haunted-f
 ## API
 `GET/POST/DELETE /api/feeds`, `POST /api/poll`, `POST /api/demo`, `GET /api/digest?hours=24`, `POST|GET /api/opml`, `GET /api/health`.
 
-## Kiro
-[`/.kiro`](.kiro) holds steering (product, tech, structure), three specs with EARS requirements/design/tasks, two `PostFileSave` hooks and a workspace MCP config (`fetch`).
+## How Kiro was used
+[`/.kiro`](.kiro) holds steering ×3 (product, tech, structure), specs ×3 with EARS requirements/design/tasks, two `PostFileSave` hooks, and a workspace MCP config (`fetch`). Full write-up answering each Kiroween judging prompt: [docs/KIRO_USAGE.md](docs/KIRO_USAGE.md).
 
-In Kiro IDE 1.4.86 (Free plan), Spec mode added requirement 7 and task 6 to the `digest-summaries` spec and implemented `GET /api/digest.md` (`digestToMarkdown`, route, test). It ran `npm test` (12/12) and fixed one broken edit of its own on the way, for about 4.4 credits. Both hooks show as enabled in the Agent Hooks panel, but I didn't see the test hook fire on a manual save. The fetch MCP server connected and Kiro called it, but my sandbox's DNS (198.18.0.1) made it refuse the request. Details and screenshots: [docs/KIRO_USAGE.md](docs/KIRO_USAGE.md).
+| Area | What happened |
+|---|---|
+| IDE / CLI / Web / Crew | **Kiro IDE 1.4.86** (Free plan) only. CLI, Web, and Crew not tried. |
+| Custom agents | Not used. |
+| Agent hooks | Two hooks enabled in the panel; did **not** fire on a manual save. |
+| Spec-driven | Spec mode added req 7 + task 6 and implemented `GET /api/digest.md` (~4.4 credits); fixed one broken edit itself. |
+| Steering | product/tech always-on; structure on `src/**`/`test/**`. tech.md "parsers never throw" kept the stack stable. |
+| MCP | `fetch` connected and was invoked; sandbox DNS `198.18.0.1` refused the call. |
+| PBT (fast-check) | In `npm test`, **authored by me**, not by Kiro. |
+| Powers | Not used. |
+
+`npm test` is currently **13/13** (unit + property + the auto-demo seed test).
 
 ## License
 MIT
